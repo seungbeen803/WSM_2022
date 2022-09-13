@@ -1,6 +1,8 @@
 .grid-container {
     display: grid;
     grid-template-columns: 80px repeat(5, 1fr);
+    width: 800px;
+    height: 400px;
 }
 .grid-item {
     border: 1px solid black;
