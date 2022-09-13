@@ -1,11 +1,24 @@
+h1 {
+    max-width: 800px;
+    text-align: center;
+    padding: 20px;
+}
 .grid-container {
     display: grid;
     grid-template-columns: 80px repeat(5, 1fr);
-    width: 800px;
+    max-width: 800px;
     height: 400px;
+}
+.days-of-the-week {
+    background-color: skyblue;
+    color: black;
 }
 .grid-item {
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 /* 1부터 시작 */
 .grid-item:nth-child(9) {
@@ -35,4 +48,7 @@
 }
 .grid-item:nth-child(36) {
     grid-area: 7 / 4 / 9 / 5;
+}
+.blank {
+    background-color: darkgoldenrod;
 }
