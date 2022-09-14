@@ -9,12 +9,12 @@ h1 {
     max-width: 800px;
     height: 400px;
 }
-.days-of-the-week {
-    background-color: coral;
+.grid-item.days-of-the-week {
+    background-color: rgb(251, 145, 107);
     color: whitesmoke;
 }
 .grid-item {
-    border: 1px solid black;
+    border: 1.5px solid coral;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +22,7 @@ h1 {
     color: coral;
 }
 .period {
-    background-color: coral;
+    background-color:  rgb(251, 145, 107);
     color: whitesmoke;
 }
 .grid-item:nth-child(11) {
@@ -48,4 +48,7 @@ h1 {
 }
 .grid-item:nth-child(34) {
     grid-area: 7 / 4 / 9 / 5;
+}
+.grid-item:nth-child(1) {
+    border: none;
 }
