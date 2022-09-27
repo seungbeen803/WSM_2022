@@ -13,7 +13,6 @@
 // MLSV_FROM_YMD: 급식시작일자
 // MLSV_TO_YMD: 급식종료일자
 // https://open.neis.go.kr/hub/mealServiceDietInfo?ATPT_OFCDC_SC_CODE=B10&SD_SCHUL_CODE=7010569&MMEAL_SC_CODE=2&MLSV_YMD=0220927&Type=json
-
 const KEY = "38f88822d3974e888465235c175927f0";
 const ATPT_OFCDC_SC_CODE = "B10";   // 서울특별시교육청
 const SD_SCHUL_CODE = "7010569";    // 미림여자정보과학고등학교
