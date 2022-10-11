@@ -24,3 +24,20 @@
     justify-content: center;
     align-items: center;
 }
+.menu-grid-container {
+    display: grid;
+    grid-template-rows: repeat(3, minmax(min-content, max-content));
+    row-gap: 20px;
+    padding: 20px;
+}
+.breakfast,
+.lunch,
+.dinner {
+    width: 180px;
+    border-radius: 8px;
+    background-color: beige;
+    padding: 20px;
+}
+h1 {
+    font-size: 1.25rem;
+}
