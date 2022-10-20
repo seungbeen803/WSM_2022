@@ -82,7 +82,7 @@ const urlToJSON = (url) => {
         let json = JSON.parse(jsonString)     // "{'key' : 'value'}" -> {'key' : 'value'}
         // console.log(json['mealServiceDietInfo'][1]['row'][0]['DDISH_NM']); // 조식 정보
 
-            // 문제가 생기면 {'RESULT':}
+        try {
             if (json['mealServiceDietInfo'][0]['head'][1]['RESULT']['CODE'] == 'INFO-000') {
                 // json -> HTML
                 try {
@@ -107,6 +107,11 @@ const urlToJSON = (url) => {
                 lunch.innerHTML = "없음";
                 dinner.innerHTML = "없음";
             }
+        } catch { // 문제가 생기면 {'RESULT':}
+            breakfast.innerHTML = "없음";
+            lunch.innerHTML = "없음";
+            dinner.innerHTML = "없음";
+        }
     }
 
 }
