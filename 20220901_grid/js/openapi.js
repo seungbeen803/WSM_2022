@@ -82,12 +82,24 @@ const urlToJSON = (url) => {
         let json = JSON.parse(jsonString)     // "{'key' : 'value'}" -> {'key' : 'value'}
         // console.log(json['mealServiceDietInfo'][1]['row'][0]['DDISH_NM']); // 조식 정보
 
-        try{
+            // 문제가 생기면 {'RESULT':}
             if (json['mealServiceDietInfo'][0]['head'][1]['RESULT']['CODE'] == 'INFO-000') {
                 // json -> HTML
-                breakfast.innerHTML = (json['mealServiceDietInfo'][1]['row'][0]['DDISH_NM']); // 조식 정보
-                lunch.innerHTML = (json['mealServiceDietInfo'][1]['row'][1]['DDISH_NM']); // 중식 정보
-                dinner.innerHTML = (json['mealServiceDietInfo'][1]['row'][2]['DDISH_NM']); // 석식 정보
+                try {
+                    breakfast.innerHTML = (json['mealServiceDietInfo'][1]['row'][0]['DDISH_NM']); // 조식 정보
+                } catch {
+                    breakfast.innerHTML = "없음";
+                }
+                try {
+                    lunch.innerHTML = (json['mealServiceDietInfo'][1]['row'][1]['DDISH_NM']); // 중식 정보
+                } catch {
+                    lunch.innerHTML = "없음";
+                }
+                try {
+                    dinner.innerHTML = (json['mealServiceDietInfo'][1]['row'][2]['DDISH_NM']); // 석식 정보
+                } catch {
+                    dinner.innerHTML = "없음";
+                }
             } else {
                 // 응답이 이상하면
                 // 없음 표시하자
@@ -95,12 +107,6 @@ const urlToJSON = (url) => {
                 lunch.innerHTML = "없음";
                 dinner.innerHTML = "없음";
             }
-        } catch { // 문제가 생기면 {'RESULT':}
-            breakfast.innerHTML = "없음";
-            lunch.innerHTML = "없음";
-            dinner.innerHTML = "없음";
-        }
-
     }
 
 }
