@@ -86,17 +86,34 @@ const urlToJSON = (url) => {
             if (json['mealServiceDietInfo'][0]['head'][1]['RESULT']['CODE'] == 'INFO-000') {
                 // json -> HTML
                 try {
-                    breakfast.innerHTML = (json['mealServiceDietInfo'][1]['row'][0]['DDISH_NM']); // 조식 정보
+                    let breakfastData = json['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'];
+                    // (5.13.)삭제하자
+                    // Regular Expression : 문자열들의 규칙을 식으로 표현한 것
+                    breakfastData = breakfastData.replace(/\([0-9\.]*\)/g, ""); // 정규 표현식: (문자 숫자나 .문자)문자 
+                    // (               \)
+                    // 숫자 한글자      [0123456789]
+                    // .               \.
+                    // 0~n개           *
+                    // )               \)
+                    // 글로벌           g
+                    // \( : 괄호 열기,  \) : 괄호 닫기
+                    breakfast.innerHTML = breakfastData; // 조식 정보
                 } catch {
                     breakfast.innerHTML = "없음";
                 }
                 try {
-                    lunch.innerHTML = (json['mealServiceDietInfo'][1]['row'][1]['DDISH_NM']); // 중식 정보
+                    let lunchData = json['mealServiceDietInfo'][1]['row'][1]['DDISH_NM'];
+                    // Regular Expression : 문자열들의 규칙을 식으로 표현한 것
+                    lunchData = lunchData.replace(/\([0-9\.]*\)/g, "");
+                    lunch.innerHTML = lunchData; // 중식 정보
                 } catch {
                     lunch.innerHTML = "없음";
                 }
                 try {
-                    dinner.innerHTML = (json['mealServiceDietInfo'][1]['row'][2]['DDISH_NM']); // 석식 정보
+                    let dinnerData = json['mealServiceDietInfo'][1]['row'][2]['DDISH_NM'];
+                    // Regular Expression : 문자열들의 규칙을 식으로 표현한 것
+                    dinnerData = dinnerData.replace(/\([0-9\.]*\)/g, "");
+                    dinner.innerHTML = dinnerData; // 석식 정보
                 } catch {
                     dinner.innerHTML = "없음";
                 }
