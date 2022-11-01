@@ -6,6 +6,7 @@ main {
 .flex-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     column-gap: 40px;
 }
 #prev_btn,
