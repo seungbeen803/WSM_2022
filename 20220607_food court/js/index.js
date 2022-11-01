@@ -63,3 +63,8 @@ const addNow = (homeCardId) => {
   }
 
   showToday();
+   // 오늘의 급식 가져오고, 표시하자
+   const showTodayMenu = () => {
+
+    }
+    showTodayMenu();
