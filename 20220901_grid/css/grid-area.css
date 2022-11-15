@@ -4,8 +4,10 @@
 .grid-container {
     display: grid;
     grid-template-areas: 
-    "header     header  header"
-    "sidebar    main    nav";
+    "header     header"
+    "nav        nav"
+    "main       sidebar";
+    grid-template-columns: 1fr 200px;
 }
 .nav {
     grid-area: nav;
