@@ -24,7 +24,7 @@ let url = `https://open.neis.go.kr/hub/mealServiceDietInfo?`
         + `SD_SCHUL_CODE=${SD_SCHUL_CODE}`
         + `MLSV_YMD=${MLSV_YMD}`
         + `MMEAL_SC_CODE=${MMEAL_SC_CODE}`;
-// console.log(url);
+//console.log(url);
 // 실시간으로 급식메뉴 가져오자
 // .date-grid-container>grid-item에 마우스 올려놓으면(mousover), handler 함수 호출하자
 let dateGridContainerDiv = document.getElementsByClassName("date-grid-container")[0];
